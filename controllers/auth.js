@@ -24,7 +24,8 @@ export const loginController = async (req, res, next) => {
         res.cookie("access_token", token, {
             httpOnly: true
         }).status(200).json({
-            message: "Login successfully!"
+            message: "Login successfully!",
+            data: user
         })
     } catch (error) {
         next(console.log({ message: error }))
